@@ -1,4 +1,4 @@
-FROM homeassistant/home-assistant:latest
+FROM homeassistant/home-assistant:stable
 
 # Add our custom entrypoint
 COPY --chown=root docker-entrypoint.sh /usr/local/sbin/

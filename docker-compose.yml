@@ -2,7 +2,6 @@ version: '3'
 services:
   homeassistant:
     container_name: homeassistant
-    # image: "ghcr.io/home-assistant/home-assistant:stable"
     build: .
     volumes:
       - ./config:/config
@@ -17,7 +16,7 @@ services:
       - 8443:8443
     depends_on: 
       - mochad
-      - zjs
+      # - zjs
 
   mochad:
     container_name: mochad

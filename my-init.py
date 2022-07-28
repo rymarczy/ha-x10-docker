@@ -1,6 +1,6 @@
 import pathlib
 
-init_check = pathlib.Path('/init-check')
+init_check = pathlib.Path('/config/init-check')
 if init_check.is_file():
     quit()
 
@@ -19,7 +19,7 @@ init_text = (
 "\n"
 "panel_iframe:\n"
 "  configurator:\n"
-"    title: File Editor\n"
+"    title: Config Editor\n"
 "    icon: mdi:wrench\n"
 "    url: http://localhost:8124\n"
 "\n"
@@ -44,5 +44,5 @@ with open('/config/scenes.yaml', 'a') as f:
     pass
 
 
-with open('/init-check', 'a') as f:
+with open('/config/init-check', 'a') as f:
     pass
