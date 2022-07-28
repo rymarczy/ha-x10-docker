@@ -7,8 +7,6 @@ services:
       - ./config:/config
       - /etc/localtime:/etc/localtime:ro
     restart: unless-stopped
-    # privileged: true
-    # network_mode: host
     ports:
       - 8123:8123
       - 8008-8009:8008-8009
@@ -16,7 +14,6 @@ services:
       - 8443:8443
     depends_on: 
       - mochad
-      # - zjs
 
   mochad:
     container_name: mochad
@@ -25,20 +22,6 @@ services:
     command: ./mochad -d
     devices:
       - /dev/bus/usb
-
-  # zjs:
-  #   container_name: zjs
-  #   image: kpine/zwave-js-server:latest
-  #   restart: unless-stopped
-  #   environment:
-  #     S2_ACCESS_CONTROL_KEY: "7764841BC794A54442E324682A550CEF"
-  #     S2_AUTHENTICATED_KEY: "66EA86F088FFD6D7497E0B32BC0C8B99"
-  #     S2_UNAUTHENTICATED_KEY: "2FAB1A27E19AE9C7CC6D18ACEB90C357"
-  #     S0_LEGACY_KEY: "17DFB0C1BED4CABFF54E4B5375E257B3"
-  #   devices:
-  #     - /dev/ttyACM0:/dev/zwave
-  #   volumes:
-  #     - ./zjs/cache:/cache
 
   hass-config:
     container_name: config

@@ -37,7 +37,7 @@ Mochad X10 settings can not be configured through the UI.
 
 Modify the `configuration.yaml` file in the `/app/config` folder to add/modify/delete X10 devices:
 
-One light device is added by default for demonstartion purposes:
+One light device is added by default for demonstration purposes:
 ```
 light:
   - platform: mochad
