@@ -12,6 +12,9 @@ services:
       - 8008-8009:8008-8009
       - 5353:5353
       - 8443:8443
+    # Update HOST_IP= with local IP of machine running home assistant
+    environment:
+      - HOST_IP=127.0.0.1
     depends_on: 
       - mochad
 
